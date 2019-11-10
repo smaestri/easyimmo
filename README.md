@@ -1,5 +1,7 @@
 # easyimmo
 Ce projet exemple montre la communication entre microservices via Kafka, et est basé sur une architecture event-driven.
+Code source de l'article https://www.effectivecoding.fr/
+
 Uses-cases :
 - Lister des annonces immobilières
 - Ajouter une annonce immobilière
