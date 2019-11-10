@@ -26,20 +26,17 @@ Vérification que l'utilisateur est éligibile quand réception événement PEND
 ### Microservice Mail : gestion de l'envoi des mails
 Envoi d'email lors de réception événement USER_VALIDATED via événements MAIL_SENT
 
-### Microservice Mail : gestion de l'envoi des mails
-
-
 ## Installation
 
 Vous avez besoin pour ce projet, d'installer [kafka](https://kafka.apache.org/quickstart), [nodejs](https://nodejs.org/en/download/) et [angular-cli](https://cli.angular.io/).
 
-### Lanceer Zookeeper
+### Lancer Zookeeper
 `bin/zookeeper-server-start.sh config/zookeeper.properties`
 
-### Lanceer Kafka
+### Lancer Kafka
 `bin/kafka-server-start.sh config/server.properties`
 
-### Lancer ms eureka (à lancer en premier!)
+### Lancer ms eureka (à lancer avant les autres!)
 Lancer la classe main
 
 ### Lancer ms gateway
