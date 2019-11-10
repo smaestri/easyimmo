@@ -9,19 +9,48 @@ PENDING -> USER_VALIDATED (l'utilisateur est éligible pour créer une annonce) 
 
 Cette gestion est asynchrone afin d'avoir une architecture distribuée, et tolérante aux pannes.
 
+## Microservies
+
 L'application se décompose en plusieurs microservices, en plus des services GATEWAY (via Spring Cloud Gateway) et DISCOVERY (via Spring-netflix-eureka).
 Chaque microservice a sa propre base locale (H2).
 
-## Microservice Ad : gestion des annonces
+### Microservice Ad : gestion des annonces
 Point d'entrée (API), sauvegarde de l'annonce au statut PENDING.
 Réception des événements des différents microservices pour mise à jour de l'annonce.
 
-## Microservice User : gestion des users
+### Microservice User : gestion des users
 Vérification que l'utilisateur est éligibile quand réception événement PENDING puis envoi événements  USER_VALIDATED / USER_NOT_VALIDATED
 
-## Microservice Mail : gestion de l'envoi des mails
+### Microservice Mail : gestion de l'envoi des mails
 Envoi d'email lors de réception événement USER_VALIDATED via événements MAIL_SENT
 
+### Microservice Mail : gestion de l'envoi des mails
+
+
+## Installation
+
+Vous avez besoin pour ce projet, d'installer [kafka](https://kafka.apache.org/quickstart), [nodejs](https://nodejs.org/en/download/) et [angular-cli](https://cli.angular.io/).
+
+### Lanceer Zookeeper
+`bin/zookeeper-server-start.sh config/zookeeper.properties`
+
+### Lanceer Kafka
+`bin/kafka-server-start.sh config/server.properties`
+
+### Lancer ms eureka (à lancer en premier!)
+Lancer la classe main
+
+### Lancer ms gateway
+Lancer la classe main
+
+### Lancer chaque microservice (ad, user, mailing)
+Lancer la classe main associée
+
+### Lancer le frontend Angular
+Dans le répertoire `frontent`, lancer `npm start`
+
+### Vérifier que ça fonctionne
+Connectez-vous sur localhost:4200, et publier une annonce. Selon le temps de traitement et du fait que les traitements soient asynchrones, l'annonce peut ne pas etre au statut final "CREATED" immédiatement. Un refresh (F5) devrait l'afficher au status CREATED.
 
 
 
