@@ -1,0 +1,30 @@
+#debug: true
+#eureka:
+#  client:
+#    defaultZone: http://localhost:8761/eureka/
+
+server:
+  port: 8083
+
+spring:
+  jpa:
+    show-sql: true
+  datasource:
+    url: jdbc:h2:mem:addb
+  h2:
+  console:
+    enabled: true
+  application:
+    name: ad-service
+kafka:
+  bootstrap-servers: localhost:9092
+#  consumer:
+#    bootstrap-servers: localhost:9092
+#    group-id: group_id
+#    auto-offset-reset: earliest
+#    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#    value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#  producer:
+#    bootstrap-servers: localhost:9092
+#    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#    value-serializer: org.apache.kafka.common.serialization.StringSerializer

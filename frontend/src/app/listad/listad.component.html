@@ -1,0 +1,6 @@
+Voici vos annonces : <br/>
+<div *ngFor="let ad of ads">
+    <span>{{ad.id}} - {{ad.title}} - {{ad.description}} - {{ad.status}}</span>
+  </div>
+
+<a routerLink="add-book" routerLinkActive="active">Publier une annonce</a>

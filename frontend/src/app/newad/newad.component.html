@@ -1,0 +1,15 @@
+<div>
+  <h1>Ajouter une annonce</h1>
+  <form (ngSubmit)="save()">
+    <div>
+      <label>Titre</label>
+      <input name="name" type="text" [(ngModel)]="ad.title" class="form-control">
+    </div>
+    <div>
+      <label>Description</label>
+      <input name="description" type="text" [(ngModel)]="ad.description" class="form-control">
+    </div>
+  </form>
+  <button (click)="save()">Valider</button>
+  <a routerLink="">Retour</a>
+</div>

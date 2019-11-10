@@ -1,0 +1,25 @@
+#debug: true
+server:
+  port: 8081
+spring:
+  jpa:
+    show-sql: true
+  datasource:
+    url: jdbc:h2:mem:userdb
+  h2:
+  console:
+    enabled: true
+  application:
+    name: user-service
+kafka:
+  bootstrap-servers: localhost:9092
+#  consumer:
+#    bootstrap-servers: localhost:9092
+#    group-id: group_id
+#    auto-offset-reset: earliest
+#    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#    value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#  producer:
+#    bootstrap-servers: localhost:9092
+#    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#    value-serializer: org.apache.kafka.common.serialization.StringSerializer
