@@ -36,6 +36,10 @@ Vous avez besoin pour ce projet, d'installer [kafka](https://kafka.apache.org/qu
 ### Lancer Kafka
 `bin/kafka-server-start.sh config/server.properties`
 
+### Créer topic "Ad"
+
+ `bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic ad`
+
 ### Lancer ms eureka (à lancer avant les autres!)
 Lancer la classe main
 
